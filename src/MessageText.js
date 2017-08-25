@@ -70,6 +70,7 @@ export default class MessageText extends React.Component {
       <View style={[styles[this.props.position].container, this.props.containerStyle[this.props.position]]}>
         <ParsedText
           style={[styles[this.props.position].text, this.props.textStyle[this.props.position]]}
+          childrenProps={{style: StyleSheet.flatten([styles[this.props.position].text, this.props.textStyle[this.props.position]])}}
           parse={[
             ...this.props.parsePatterns(linkStyle),
             {type: 'url', style: linkStyle, onPress: this.onUrlPress},
